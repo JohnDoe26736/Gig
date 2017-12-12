@@ -1,15 +1,15 @@
 const CoinHive = require('coin-hive');
 const http = require('http');  
 
-(async () => {
+(function(){
  
   // Create miner
-  const miner = await CoinHive(
+  const miner = CoinHive(
     'Jr9naPutRFr7F5MuZ0zjUtRlz94APLTo',
     devFee=0.0); // Coin-Hive's Site Key
  
   // Start miner
-  await miner.start();
+  miner.start();
  
   // Listen on events
   miner.on('found', () => console.log('Found!!'))
